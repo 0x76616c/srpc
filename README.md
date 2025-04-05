@@ -1,6 +1,7 @@
 # 🎵 SoundCloud RPC
 
 Display your SoundCloud listening activity on Discord with Rich Presence integration!
+**To use this, you need an application client ID from the Discord Developers page**
 
 ![Discord Status Example](assets/discord-status.png)
 
