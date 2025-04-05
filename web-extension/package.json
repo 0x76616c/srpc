@@ -1,0 +1,19 @@
+{
+  "name": "srpc-extension",
+  "version": "0.1.0",
+  "description": "Soundcloud Rich Presence for Discord",
+  "scripts": {
+    "start": "web-ext run",
+    "build": "web-ext build --config web-ext.config.js",
+    "lint": "web-ext lint",
+    "validate": "npm run lint && web-ext build --config web-ext.config.js",
+    "build:chrome": "node -e \"require('fs').copyFileSync('manifest.chrome.json', 'manifest.json')\" && web-ext build",
+    "build:firefox": "node -e \"require('fs').copyFileSync('manifest.firefox.json', 'manifest.json')\" && web-ext build --overwrite-dest",
+    "dev:chrome": "node -e \"require('fs').copyFileSync('manifest.chrome.json', 'manifest.json')\" && web-ext run --target=chromium",
+    "dev:firefox": "node -e \"require('fs').copyFileSync('manifest.firefox.json', 'manifest.json')\" && web-ext run --target=firefox-desktop"
+  },
+  "devDependencies": {
+    "web-ext": "^7.8.0"
+  },
+  "private": true
+}
