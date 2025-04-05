@@ -17,7 +17,7 @@ Display your SoundCloud listening activity on Discord with Rich Presence integra
 
 ### Desktop Application
 
-- System tray integration for easy access
+- System tray integration for easy access (in development)
 - Auto-startup capability
 - Cross-platform support (Windows & Linux)
 - Token-based authentication
