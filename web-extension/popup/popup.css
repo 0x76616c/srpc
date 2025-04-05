@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  padding: 10px;
+  background: #2f3136;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  width: 300px;
+}
+
+.card {
+  background: #36393f;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.header {
+  font-size: 12px;
+  color: #b9bbbe;
+  margin-bottom: 10px;
+}
+
+.media {
+  display: flex;
+  gap: 10px;
+}
+
+.media img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  background: #444;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.artist {
+  font-size: 13px;
+  color: #b9bbbe;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.bar {
+  background: #444;
+  flex-grow: 1;
+  height: 4px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+#barFill {
+  background: #1db954;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  flex: 1;
+  background: #4f545c;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5f656d;
+}
+
+#status {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#settings {
+  margin-top: 16px;
+  padding: 16px;
+  border-top: 1px solid #2f3136;
+}
+
+#settings h3 {
+  margin: 0 0 12px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  color: #b9bbbe;
+  font-size: 12px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  background: #2f3136;
+  border: 1px solid #202225;
+  border-radius: 4px;
+  color: #fff;
+}
+
+#saveSettings {
+  width: 100%;
+  margin-top: 8px;
+}
+
+#saveStatus {
+  margin-top: 8px;
+  text-align: center;
+  color: #43b581;
+  font-size: 12px;
+}

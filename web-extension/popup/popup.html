@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SRPC</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">Listening on SoundCloud</div>
+      <div class="media">
+        <img id="artwork" src="" alt="artwork" />
+        <div class="info">
+          <div id="title" class="title">Track Title</div>
+          <div id="artist" class="artist">Artist Name</div>
+        </div>
+      </div>
+      <div class="progress">
+        <span id="currentTime">0:00</span>
+        <div class="bar"><div id="barFill"></div></div>
+        <span id="duration">0:00</span>
+      </div>
+      <div id="status">
+        <div id="playback-status">Loading...</div>
+        <div id="ws-status">Checking desktop connection...</div>
+      </div>
+      <div class="buttons">
+        <button id="open">Open SoundCloud</button>
+      </div>
+      <div id="settings">
+        <h3>Connection Settings</h3>
+        <div class="form-group">
+          <label for="port">Port:</label>
+          <input type="number" id="port" value="1234" />
+        </div>
+        <div class="form-group">
+          <label for="token">Token:</label>
+          <input type="text" id="token" value="default_token" />
+        </div>
+        <button id="saveSettings">Save</button>
+        <div id="saveStatus"></div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

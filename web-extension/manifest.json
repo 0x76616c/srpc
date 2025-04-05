@@ -2,16 +2,32 @@
   "manifest_version": 2,
   "name": "Soundcloud RPC",
   "version": "0.1",
-  "description": "Discord Rich Presence for Soundcloud.",
-  "permissions": ["tabs", "activeTab", "http://localhost:8461"],
+  "description": "Soundcloud Rich Presence for Discord",
+  "permissions": [
+    "tabs",
+    "storage",
+    "*://soundcloud.com/*",
+    "*://w.soundcloud.com/*"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; connect-src 'self' ws://localhost:* wss://localhost:*",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Soundcloud RPC"
+  },
   "content_scripts": [
     {
       "matches": ["*://soundcloud.com/*"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "js": [
+        "content/hook.js",
+        "content/logger.js",
+        "content/metadata.js",
+        "content/index.js"
+      ],
+      "run_at": "document_start"
     }
-  ],
-  "browser_action": {
-    "default_title": "Soundcloud RPC"
-  }
+  ]
 }

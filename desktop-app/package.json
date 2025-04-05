@@ -1,0 +1,36 @@
+{
+  "name": "srpc-desktop-app",
+  "version": "0.1",
+  "description": "Desktop application for SoundCloud RPC WebSocket server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "pkg .",
+    "build:win": "pkg . --targets node16-win-x64 --output dist/srpc-win.exe",
+    "build:linux": "pkg . --targets node16-linux-x64 --output dist/srpc-linux",
+    "build:all": "npm run build:win && npm run build:linux"
+  },
+  "dependencies": {
+    "auto-launch": "^5.0.5",
+    "commander": "^13.1.0",
+    "discord-rich-presence": "^0.0.8",
+    "discord-rpc": "^4.0.1",
+    "dotenv": "^16.0.3",
+    "pkg": "^5.8.1",
+    "systray": "^1.0.5",
+    "uuid": "^11.1.0",
+    "ws": "^8.13.0"
+  },
+  "bin": {
+    "srpc": "server.js"
+  },
+  "pkg": {
+    "assets": [
+      "icons/*"
+    ],
+    "targets": [
+      "node16-win-x64",
+      "node16-linux-x64"
+    ]
+  }
+}
