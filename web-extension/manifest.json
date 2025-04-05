@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Soundcloud RPC",
+  "version": "0.1",
+  "description": "Discord Rich Presence for Soundcloud.",
+  "permissions": ["tabs", "activeTab", "http://localhost:8461"],
+  "content_scripts": [
+    {
+      "matches": ["*://soundcloud.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Soundcloud RPC"
+  }
+}
