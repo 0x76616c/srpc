@@ -8,6 +8,7 @@ class WebSocketServer {
     this.wss = null;
     this.clients = new Map();
     this.onMetadataUpdate = null;
+    this.onClientDisconnect = null;
   }
 
   start() {
@@ -74,12 +75,18 @@ class WebSocketServer {
         console.log('[WebSocket] Client disconnected');
         this.clients.delete(clientId);
         clearInterval(pingInterval);
+        if (this.onClientDisconnect && this.clients.size === 0) {
+          this.onClientDisconnect();
+        }
       });
 
       ws.on('error', (error) => {
         console.error('[WebSocket] Client error:', error);
         this.clients.delete(clientId);
         clearInterval(pingInterval);
+        if (this.onClientDisconnect && this.clients.size === 0) {
+          this.onClientDisconnect();
+        }
       });
     });
 

@@ -158,6 +158,15 @@ class SRPCServer {
         this.discord.setActivity(metadata);
       };
 
+      this.wss.onClientDisconnect = () => {
+        this.log('info', 'WebSocket client disconnected, clearing presence');
+        this.discord.write(1, {
+          cmd: 'SET_ACTIVITY',
+          args: { pid: process.pid },
+          nonce: Math.random().toString(),
+        });
+      };
+
       this.wss.start();
       this.log('info', 'Server started successfully');
     } catch (error) {
